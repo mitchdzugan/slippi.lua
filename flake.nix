@@ -1,9 +1,8 @@
 {
   description = "slippi parser";
   inputs = {
-    mitch-utils.url = "path:/home/dz/Projects/mitch-utils.nix";
-    # ctx-lua.url = "github:mitchdzugan/ctx.lua";
-    ctx-lua.url = "path:/home/dz/Projects/ctx.lua";
+    mitch-utils.url = "github:mitchdzugan/mitch-utils.nix";
+    ctx-lua.url = "github:mitchdzugan/ctx.lua";
   };
   outputs = ({ mitch-utils, ctx-lua, ... }:
     let
