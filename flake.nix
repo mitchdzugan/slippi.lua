@@ -1,32 +1,17 @@
 {
-  description = "Empty Template";
-
+  description = "slippi parser";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-    ctx-lua.url = "path:/VOID/proj/ctx.lua";
+    mitch-utils.url = "path:/home/dz/Projects/mitch-utils.nix";
     # ctx-lua.url = "github:mitchdzugan/ctx.lua";
+    ctx-lua.url = "path:/home/dz/Projects/ctx.lua";
   };
-
-  outputs = {
-    nixpkgs,
-    flake-utils,
-    ctx-lua,
-    ...
-  }:
-    flake-utils.lib.eachDefaultSystem (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-
-        nativeBuildInputs = with pkgs; [];
-        buildInputs = with pkgs; [
-          (pkgs.lua5_1.withPackages (lp: [
-            lp.busted
-            (ctx-lua.mkPkg(lp))
-          ]))
-        ];
-      in {
-        devShells.default = pkgs.mkShell {inherit nativeBuildInputs buildInputs;};
-      }
-    );
+  outputs = ({ mitch-utils, ctx-lua, ... }:
+    let
+      mkLuaDeps = luaPkgs: with luaPkgs; [
+        busted
+        fennel
+        (ctx-lua.mkPkg luaPkgs)
+      ];
+    in (mitch-utils.mkZnFnl "slippi" "0.0.1-0" mkLuaDeps ./.)
+  );
 }

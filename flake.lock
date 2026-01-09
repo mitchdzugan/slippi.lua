@@ -2,17 +2,16 @@
   "nodes": {
     "ctx-lua": {
       "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "mitch-utils": "mitch-utils"
       },
       "locked": {
-        "lastModified": 1767899478,
-        "narHash": "sha256-NdKqEXXnGKd3Wnu6Hh2Y0uiYHyVAKE5wRRAMZvegwrU=",
-        "path": "/VOID/proj/ctx.lua",
+        "lastModified": 1767921307,
+        "narHash": "sha256-xdEypz5kXujKI5xmU+8Y4sVm/ZY4MHHIqop10DxdPeE=",
+        "path": "/home/dz/Projects/ctx.lua",
         "type": "path"
       },
       "original": {
-        "path": "/VOID/proj/ctx.lua",
+        "path": "/home/dz/Projects/ctx.lua",
         "type": "path"
       }
     },
@@ -52,6 +51,38 @@
         "type": "github"
       }
     },
+    "mitch-utils": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1767921106,
+        "narHash": "sha256-CDXpIyH+q8lr2JmWkfdOrMQ9Hlcm7BZH8rNLcGBxV5s=",
+        "path": "/home/dz/Projects/mitch-utils.nix",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/dz/Projects/mitch-utils.nix",
+        "type": "path"
+      }
+    },
+    "mitch-utils_2": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1767921106,
+        "narHash": "sha256-CDXpIyH+q8lr2JmWkfdOrMQ9Hlcm7BZH8rNLcGBxV5s=",
+        "path": "/home/dz/Projects/mitch-utils.nix",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/dz/Projects/mitch-utils.nix",
+        "type": "path"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1767767207,
@@ -87,8 +118,7 @@
     "root": {
       "inputs": {
         "ctx-lua": "ctx-lua",
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_2"
+        "mitch-utils": "mitch-utils_2"
       }
     },
     "systems": {
