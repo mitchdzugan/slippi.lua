@@ -22,9 +22,7 @@
         buildInputs = with pkgs; [
           (pkgs.lua5_1.withPackages (lp: [
             lp.busted
-            lp.inspect
-            lp.serpent
-            ctx-lua.mkPkg(lp)
+            (ctx-lua.mkPkg(lp))
           ]))
         ];
       in {
